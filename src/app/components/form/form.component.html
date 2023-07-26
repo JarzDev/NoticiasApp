@@ -1,0 +1,36 @@
+<div class="card text-white bg-dark mb-3 mt-3">
+   <h2 class="heading">Filtra por Pais y Categoria</h2>
+   <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <form (ngSubmit)="searchNews()">
+         <div class="form-group">
+            <label for="select" class="col-lg-2 control-label "></label>
+            <div class="col-lg-10">
+              <select [(ngModel)]="catSelected" name="Categoria" class="form-control form-control-lg texty" >
+                <option [value]="categoria.value" *ngFor="let categoria of categorias">{{categoria.nombre}}</option>
+                
+              </select>
+            </div>
+            <br>
+              <div class="form-group">
+               <label for="select" class="col-lg-2 control-label  "></label>
+               <div class="col-lg-10">
+                 <select  [(ngModel)]="paisSelected" name="Pais" class="form-control form-control-lg texty" >
+                   <option [value]="pais.value" *ngFor=" let pais of paises">{{pais.nombre}}</option>
+                 
+                 </select>
+      
+                </div>
+               </div>
+          </div>
+          <div class="d-grid gap-2 mt-3" >
+            <button type="submit" class="btn btn-primary btn-lg active">Buscar</button>
+            </div>  
+      </form>
+     <br>
+
+    
+   
+   </div>  
+   </div>
+</div>
