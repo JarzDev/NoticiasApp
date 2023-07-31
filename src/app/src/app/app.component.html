@@ -1,0 +1,6 @@
+<app-navbar  (searchText)="searchNewsBySearch($event)" [titulo]="'Buscador de Noticias'"> </app-navbar>
+
+<div class="container">
+  <app-form (selectedParams)="searchNews($event)"></app-form>
+<app-news-list [listNews]="listNews"></app-news-list> 
+</div>
