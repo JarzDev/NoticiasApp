@@ -48,6 +48,14 @@ Una aplicación moderna de noticias desarrollada con Angular que permite buscar 
    
    Navega a `http://localhost:4200/`
 
+## 🌐 Demo en Vivo
+
+¡Puedes ver la aplicación funcionando en línea!
+
+**🔗 URL del Proyecto:** [https://buscanews.pages.dev/](https://buscanews.pages.dev/)
+
+La aplicación está desplegada y disponible para que puedas probarla directamente sin necesidad de instalar nada localmente.
+
 ## 🏗️ Arquitectura del Proyecto
 
 ```
