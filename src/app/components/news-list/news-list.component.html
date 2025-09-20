@@ -1,28 +1,78 @@
-<div class="container">
-
-        <div class="row">
-          <div *ngFor="let news of listNews" class="col-lg-4">
-        <div class="card-shadow-lg" >
-            <div class="card">
-                <h3 class="card-header">{{news.title}}</h3>
-                <div class="card-body">
-                  <h5 class="card-title">{{news.source_id}}</h5>
-                  <h6 class="card-subtitle text-muted">{{news.pubDate |date}}</h6>
-                
-                     <a href="{{news.link}}">
-                    <img src="{{news.image_url}} " 
-                    alt="{{news.name}}"
-                    class="card-img-top">
-                    <img *ngIf="news.image_url == null" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg"
-                    alt="{{news.name}}"
-                    class="card-img-top">
-                     </a>
-
-           
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
+<div class="news-section">
+  <div class="container">
+    <div *ngIf="listNews && listNews.length > 0" class="news-header">
+      <h2 class="section-title text-gradient">
+        <i class="fas fa-newspaper"></i>
+        Últimas Noticias
+      </h2>
+      <p class="section-subtitle">{{listNews.length}} noticias encontradas</p>
     </div>
+
+    <div *ngIf="!listNews || listNews.length === 0" class="empty-state">
+      <div class="empty-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      <h3>No se encontraron noticias</h3>
+      <p>Intenta con diferentes filtros o términos de búsqueda</p>
+    </div>
+
+    <div class="news-grid" *ngIf="listNews && listNews.length > 0">
+      <article *ngFor="let news of listNews; trackBy: trackByFn" class="news-card">
+        <div class="card-inner">
+          <div class="image-container">
+            <img 
+              [src]="news.image_url || 'https://via.placeholder.com/400x250/e2e8f0/64748b?text=Sin+Imagen'" 
+              [alt]="news.title"
+              class="news-image"
+              loading="lazy">
+            <div class="image-overlay">
+              <a [href]="news.link" target="_blank" class="read-more-btn">
+                <i class="fas fa-external-link-alt"></i>
+                Leer más
+              </a>
+            </div>
+          </div>
+          
+          <div class="card-content">
+            <div class="news-meta">
+              <span class="news-source">
+                <i class="fas fa-rss"></i>
+                {{news.source_id}}
+              </span>
+              <time class="news-date">
+                <i class="fas fa-calendar-alt"></i>
+                {{news.pubDate | date:'dd MMM yyyy'}}
+              </time>
+            </div>
+            
+            <h3 class="news-title">
+              <a [href]="news.link" target="_blank">{{news.title}}</a>
+            </h3>
+            
+            <p class="news-description" *ngIf="news.description">
+              {{news.description | slice:0:150}}{{news.description?.length > 150 ? '...' : ''}}
+            </p>
+            
+            <div class="card-actions">
+              <a [href]="news.link" target="_blank" class="btn btn-outline">
+                <i class="fas fa-arrow-right"></i>
+                Leer completa
+              </a>
+              <button class="btn btn-icon" title="Compartir">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div *ngIf="listNews && listNews.length > 12" class="load-more-section">
+      <button class="btn btn-secondary load-more-btn">
+        <i class="fas fa-plus"></i>
+        Cargar más noticias
+      </button>
+    </div>
+  </div>
+</div>
       

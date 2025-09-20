@@ -1,18 +1,33 @@
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <p class="navbar-brand">{{titulo}}</p>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg modern-navbar glass-effect">
+  <div class="container">
+    <div class="navbar-brand-container">
+      <i class="fas fa-newspaper brand-icon"></i>
+      <h1 class="navbar-brand text-gradient">{{titulo}}</h1>
+    </div>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
-      <form (ngSubmit)="searchTextForm()" class="d-flex">
-        <input  class="form-control me-sm-2" type="search" name="textIn" id="textIn" value="text" placeholder="Personalizada" [(ngModel)]="textIn">
-        
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <form (ngSubmit)="searchTextForm()" class="search-form ms-auto">
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input 
+            class="form-control search-input" 
+            type="search" 
+            name="textIn" 
+            id="textIn" 
+            placeholder="Buscar noticias personalizadas..." 
+            [(ngModel)]="textIn">
+          <button class="btn btn-primary search-btn" type="submit">
+            <i class="fas fa-search"></i>
+            <span class="btn-text">Buscar</span>
+          </button>
+        </div>
       </form>
-      
     </div>
-  
+  </div>
 </nav>
 
 

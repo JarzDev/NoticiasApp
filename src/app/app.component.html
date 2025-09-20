@@ -1,6 +1,38 @@
-<app-navbar  (searchText)="searchNewsBySearch($event)" [titulo]="'Buscador de Noticias'"> </app-navbar>
+<app-navbar (searchText)="searchNewsBySearch($event)" [titulo]="'Buscador de Noticias'"></app-navbar>
 
-<div class="container">
-  <app-form (selectedParams)="searchNews($event)"></app-form>
-<app-news-list [listNews]="listNews"></app-news-list> 
-</div>
+<main class="main-content">
+  <div class="container">
+    <app-form (selectedParams)="searchNews($event)"></app-form>
+    <app-news-list [listNews]="listNews"></app-news-list>
+  </div>
+</main>
+
+<footer class="app-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="fas fa-newspaper"></i>
+        <span>NoticiasApp</span>
+      </div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Términos</a>
+        <a href="#" class="footer-link">Privacidad</a>
+        <a href="#" class="footer-link">Contacto</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-link" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-link" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" class="social-link" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 NoticiasApp. Desarrollado con ❤️ usando Angular.</p>
+    </div>
+  </div>
+</footer>

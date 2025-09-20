@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./news-list.component.css']
 })
 export class NewsListComponent {
-@Input () listNews: any[] = [];
+  @Input() listNews: any[] = [];
 
+  trackByFn(index: number, item: any): any {
+    return item.link || index;
+  }
 }

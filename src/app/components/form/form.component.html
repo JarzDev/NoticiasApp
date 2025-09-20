@@ -1,36 +1,59 @@
-<div class="card text-white bg-dark mb-3 mt-3">
-   <h2 class="heading">Filtra por Pais y Categoria</h2>
-   <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <form (ngSubmit)="searchNews()">
-         <div class="form-group">
-            <label for="select" class="col-lg-2 control-label "></label>
-            <div class="col-lg-10">
-              <select [(ngModel)]="catSelected" name="Categoria" class="form-control form-control-lg texty" >
-                <option [value]="categoria.value" *ngFor="let categoria of categorias">{{categoria.nombre}}</option>
-                
-              </select>
-            </div>
-            <br>
-              <div class="form-group">
-               <label for="select" class="col-lg-2 control-label  "></label>
-               <div class="col-lg-10">
-                 <select  [(ngModel)]="paisSelected" name="Pais" class="form-control form-control-lg texty" >
-                   <option [value]="pais.value" *ngFor=" let pais of paises">{{pais.nombre}}</option>
-                 
-                 </select>
+<div class="filter-section">
+  <div class="container">
+    <div class="filter-card glass-effect">
+      <div class="filter-header">
+        <div class="header-icon">
+          <i class="fas fa-filter"></i>
+        </div>
+        <h2 class="filter-title text-gradient">Filtra por País y Categoría</h2>
+        <p class="filter-subtitle">Personaliza tu búsqueda de noticias</p>
+      </div>
       
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <form (ngSubmit)="searchNews()" class="filter-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fas fa-tags label-icon"></i>
+                  Categoría
+                </label>
+                <div class="select-wrapper">
+                  <select [(ngModel)]="catSelected" name="Categoria" class="form-control modern-select">
+                    <option [value]="categoria.value" *ngFor="let categoria of categorias">
+                      {{categoria.nombre}}
+                    </option>
+                  </select>
+                  <i class="fas fa-chevron-down select-arrow"></i>
                 </div>
-               </div>
-          </div>
-          <div class="d-grid gap-2 mt-3" >
-            <button type="submit" class="btn btn-primary btn-lg active">Buscar</button>
-            </div>  
-      </form>
-     <br>
+              </div>
 
-    
-   
-   </div>  
-   </div>
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fas fa-globe label-icon"></i>
+                  País
+                </label>
+                <div class="select-wrapper">
+                  <select [(ngModel)]="paisSelected" name="Pais" class="form-control modern-select">
+                    <option [value]="pais.value" *ngFor="let pais of paises">
+                      {{pais.nombre}}
+                    </option>
+                  </select>
+                  <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+              </div>
+            </div>
+            
+            <div class="button-container">
+              <button type="submit" class="btn btn-primary search-button">
+                <i class="fas fa-search"></i>
+                <span>Buscar Noticias</span>
+                <div class="button-ripple"></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
