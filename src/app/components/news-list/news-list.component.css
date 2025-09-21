@@ -16,6 +16,11 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px double var(--primary-color);
+  padding-bottom: 1rem;
 }
 
 .section-title i {
@@ -54,16 +59,27 @@
 }
 
 .news-card {
-  background: white;
-  border-radius: 16px;
+  background: var(--paper-white);
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-paper);
   transition: all 0.3s ease;
   position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.news-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-color);
+  z-index: 1;
 }
 
 .news-card:hover {
-  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -169,6 +185,7 @@
   line-height: 1.4;
   margin-bottom: 1rem;
   flex: 1;
+  font-family: 'Playfair Display', serif;
 }
 
 .news-title a {
@@ -183,9 +200,11 @@
 
 .news-description {
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
+  font-family: 'Crimson Text', serif;
+  text-align: justify;
 }
 
 .card-actions {
@@ -199,10 +218,10 @@
 
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   color: var(--primary-color);
   padding: 0.5rem 1rem;
-  border-radius: 25px;
+  border-radius: 0;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -210,12 +229,14 @@
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-outline:hover {
   background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
+  color: var(--paper-white);
 }
 
 .btn-icon {
@@ -234,8 +255,7 @@
 
 .btn-icon:hover {
   background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
+  color: var(--paper-white);
 }
 
 .load-more-section {

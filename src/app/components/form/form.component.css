@@ -4,12 +4,13 @@
 }
 
 .filter-card {
-  border-radius: 20px;
+  border-radius: 0;
   padding: 2.5rem;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-paper);
+  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
+  background: var(--paper-white);
 }
 
 .filter-card::before {
@@ -18,8 +19,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  height: 3px;
+  background: var(--primary-color);
 }
 
 .filter-header {
@@ -33,22 +34,24 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 0;
+  background: var(--primary-color);
   margin-bottom: 1rem;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-paper);
 }
 
 .header-icon i {
   font-size: 1.5rem;
-  color: white;
+  color: var(--paper-white);
 }
 
 .filter-title {
   font-size: 2.25rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.025em;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
 }
 
 .filter-subtitle {
@@ -96,9 +99,10 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: white;
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
+  background: var(--paper-white);
+  border: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
   padding: 1rem 3rem 1rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -106,18 +110,19 @@
   width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Crimson Text', serif;
 }
 
 .modern-select:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  transform: translateY(-2px);
+  border-color: var(--border-color);
+  border-bottom-color: var(--text-dark);
+  box-shadow: none;
 }
 
 .modern-select:hover {
-  border-color: var(--accent-color);
-  transform: translateY(-1px);
+  border-color: var(--border-color);
+  border-bottom-color: var(--primary-color);
 }
 
 .select-arrow {
@@ -144,26 +149,30 @@
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 50px;
-  border: none;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  color: white;
+  border-radius: 0;
+  border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+  color: var(--paper-white);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-paper);
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .search-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+  background: var(--text-dark);
+  border-color: var(--text-dark);
+  box-shadow: var(--shadow-lg);
 }
 
 .search-button:active {
-  transform: translateY(-1px);
+  box-shadow: var(--shadow);
 }
 
 .button-ripple {

@@ -1,11 +1,11 @@
 .modern-navbar {
   padding: 1rem 0;
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--paper-white);
+  border-bottom: 3px double var(--primary-color);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-paper);
 }
 
 .navbar-brand-container {
@@ -24,7 +24,9 @@
   font-size: 1.75rem;
   font-weight: 800;
   margin: 0;
-  letter-spacing: -0.025em;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
 }
 
 .search-form {
@@ -49,32 +51,39 @@
 
 .search-input {
   padding-left: 2.5rem !important;
-  border-radius: 25px;
-  border: 2px solid transparent;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+  border-radius: 0;
+  border: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--primary-color);
+  background: var(--paper-white);
   font-size: 0.95rem;
   flex: 1;
+  font-family: 'Crimson Text', serif;
 }
 
 .search-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  background: white;
+  border-color: var(--border-color);
+  border-bottom-color: var(--text-dark);
+  box-shadow: none;
+  outline: none;
+  background: var(--paper-white);
 }
 
 .search-btn {
-  border-radius: 25px;
+  border-radius: 0;
   padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
   white-space: nowrap;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .search-btn:hover {
-  transform: translateY(-2px);
+  background: var(--text-dark);
+  border-color: var(--text-dark);
 }
 
 .btn-text {
